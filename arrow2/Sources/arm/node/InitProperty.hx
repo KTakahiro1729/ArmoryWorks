@@ -1,0 +1,97 @@
+package arm.node;
+
+@:keep class InitProperty extends armory.logicnode.LogicTree {
+
+	public function new() { super(); notifyOnAdd(add); }
+
+	override public function add() {
+		var _SetProperty = new armory.logicnode.SetPropertyNode(this);
+		var _OnInit = new armory.logicnode.OnInitNode(this);
+		var _SetProperty_001 = new armory.logicnode.SetPropertyNode(this);
+		_SetProperty_001.addInput(_OnInit, 0);
+		_SetProperty_001.addInput(new armory.logicnode.ObjectNode(this, "ControllTarget"), 0);
+		_SetProperty_001.addInput(new armory.logicnode.StringNode(this, "y"), 0);
+		var _SeparateXYZ = new armory.logicnode.SeparateVectorNode(this);
+		var _GetLocation = new armory.logicnode.GetLocationNode(this);
+		_GetLocation.addInput(new armory.logicnode.ObjectNode(this, ""), 0);
+		_GetLocation.addOutputs([_SeparateXYZ]);
+		_SeparateXYZ.addInput(_GetLocation, 0);
+		_SeparateXYZ.addOutputs([new armory.logicnode.FloatNode(this, 0.0)]);
+		_SeparateXYZ.addOutputs([_SetProperty_001]);
+		_SeparateXYZ.addOutputs([new armory.logicnode.FloatNode(this, 0.0)]);
+		_SetProperty_001.addInput(_SeparateXYZ, 1);
+		_SetProperty_001.addOutputs([new armory.logicnode.NullNode(this)]);
+		var _SetProperty_002 = new armory.logicnode.SetPropertyNode(this);
+		_SetProperty_002.addInput(_OnInit, 0);
+		_SetProperty_002.addInput(new armory.logicnode.ObjectNode(this, "ControllTarget"), 0);
+		_SetProperty_002.addInput(new armory.logicnode.StringNode(this, "amp"), 0);
+		var _Integer_001 = new armory.logicnode.IntegerNode(this);
+		_Integer_001.addInput(new armory.logicnode.IntegerNode(this, 0), 0);
+		_Integer_001.addOutputs([_SetProperty_002]);
+		_SetProperty_002.addInput(_Integer_001, 0);
+		_SetProperty_002.addOutputs([new armory.logicnode.NullNode(this)]);
+		var _SetProperty_003 = new armory.logicnode.SetPropertyNode(this);
+		_SetProperty_003.addInput(_OnInit, 0);
+		_SetProperty_003.addInput(new armory.logicnode.ObjectNode(this, "ControllBow"), 0);
+		_SetProperty_003.addInput(new armory.logicnode.StringNode(this, "Fireable"), 0);
+		var _Integer_002 = new armory.logicnode.IntegerNode(this);
+		_Integer_002.addInput(new armory.logicnode.IntegerNode(this, 1), 0);
+		_Integer_002.addOutputs([_SetProperty_003]);
+		_SetProperty_003.addInput(_Integer_002, 0);
+		_SetProperty_003.addOutputs([new armory.logicnode.NullNode(this)]);
+		var _SetProperty_004 = new armory.logicnode.SetPropertyNode(this);
+		_SetProperty_004.addInput(_OnInit, 0);
+		_SetProperty_004.addInput(new armory.logicnode.ObjectNode(this, "ControllBow"), 0);
+		_SetProperty_004.addInput(new armory.logicnode.StringNode(this, "MaxPower"), 0);
+		var _Float = new armory.logicnode.FloatNode(this);
+		_Float.addInput(new armory.logicnode.FloatNode(this, 30.0), 0);
+		_Float.addOutputs([_SetProperty_004]);
+		_SetProperty_004.addInput(_Float, 0);
+		_SetProperty_004.addOutputs([new armory.logicnode.NullNode(this)]);
+		var _SetProperty_005 = new armory.logicnode.SetPropertyNode(this);
+		_SetProperty_005.addInput(_OnInit, 0);
+		_SetProperty_005.addInput(new armory.logicnode.ObjectNode(this, "ControllBow"), 0);
+		_SetProperty_005.addInput(new armory.logicnode.StringNode(this, "MinPower"), 0);
+		var _Float_001 = new armory.logicnode.FloatNode(this);
+		_Float_001.addInput(new armory.logicnode.FloatNode(this, 3.0), 0);
+		_Float_001.addOutputs([_SetProperty_005]);
+		_SetProperty_005.addInput(_Float_001, 0);
+		_SetProperty_005.addOutputs([new armory.logicnode.NullNode(this)]);
+		var _SetProperty_006 = new armory.logicnode.SetPropertyNode(this);
+		_SetProperty_006.addInput(_OnInit, 0);
+		_SetProperty_006.addInput(new armory.logicnode.ObjectNode(this, "ControllBow"), 0);
+		_SetProperty_006.addInput(new armory.logicnode.StringNode(this, "FirePower"), 0);
+		var _Float_002 = new armory.logicnode.FloatNode(this);
+		_Float_002.addInput(new armory.logicnode.FloatNode(this, 3.0), 0);
+		_Float_002.addOutputs([_SetProperty_006]);
+		_SetProperty_006.addInput(_Float_002, 0);
+		_SetProperty_006.addOutputs([new armory.logicnode.NullNode(this)]);
+		var _SetProperty_007 = new armory.logicnode.SetPropertyNode(this);
+		_SetProperty_007.addInput(_OnInit, 0);
+		_SetProperty_007.addInput(new armory.logicnode.ObjectNode(this, "ControllBow"), 0);
+		_SetProperty_007.addInput(new armory.logicnode.StringNode(this, "FirePower"), 0);
+		var _Float_003 = new armory.logicnode.FloatNode(this);
+		_Float_003.addInput(new armory.logicnode.FloatNode(this, 0.0), 0);
+		_Float_003.addOutputs([_SetProperty_007]);
+		_SetProperty_007.addInput(_Float_003, 0);
+		_SetProperty_007.addOutputs([new armory.logicnode.NullNode(this)]);
+		var _SetProperty_008 = new armory.logicnode.SetPropertyNode(this);
+		_SetProperty_008.addInput(_OnInit, 0);
+		_SetProperty_008.addInput(new armory.logicnode.ObjectNode(this, "ControllBow"), 0);
+		_SetProperty_008.addInput(new armory.logicnode.StringNode(this, "MouseStartedTime"), 0);
+		var _Float_004 = new armory.logicnode.FloatNode(this);
+		_Float_004.addInput(new armory.logicnode.FloatNode(this, 0.0), 0);
+		_Float_004.addOutputs([_SetProperty_008]);
+		_SetProperty_008.addInput(_Float_004, 0);
+		_SetProperty_008.addOutputs([new armory.logicnode.NullNode(this)]);
+		_OnInit.addOutputs([_SetProperty, _SetProperty_001, _SetProperty_002, _SetProperty_003, _SetProperty_004, _SetProperty_005, _SetProperty_006, _SetProperty_007, _SetProperty_008]);
+		_SetProperty.addInput(_OnInit, 0);
+		_SetProperty.addInput(new armory.logicnode.ObjectNode(this, "ControllTarget"), 0);
+		_SetProperty.addInput(new armory.logicnode.StringNode(this, "HitCounter"), 0);
+		var _Integer = new armory.logicnode.IntegerNode(this);
+		_Integer.addInput(new armory.logicnode.IntegerNode(this, 0), 0);
+		_Integer.addOutputs([_SetProperty]);
+		_SetProperty.addInput(_Integer, 0);
+		_SetProperty.addOutputs([new armory.logicnode.NullNode(this)]);
+	}
+}
